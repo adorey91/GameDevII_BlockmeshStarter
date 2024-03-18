@@ -16,7 +16,7 @@ public class GameManager : MonoBehaviour
     public enum GameState { MainMenu, Gameplay, Paused, GameEnd }
 
     public GameState gameState;
-    
+
     public GameObject spawnPoint;
     public GameObject player;
     public FirstPersonController_Sam _fpsControllerScript;
@@ -28,7 +28,7 @@ public class GameManager : MonoBehaviour
 
         player = GameObject.FindGameObjectWithTag("Player");
 
-        gameState = GameState.MainMenu;        
+        gameState = GameState.MainMenu;
 
         // Find the object in the scene that has a LevelManager component
         _levelManager = FindObjectOfType<LevelManager>();
@@ -37,19 +37,19 @@ public class GameManager : MonoBehaviour
         _uIManager = FindObjectOfType<UIManager>();
 
         // Find the object in the scene that has a CharacterController component
-        _characterController = FindObjectOfType<CharacterController>();        
+        _characterController = FindObjectOfType<CharacterController>();
         _fpsControllerScript = FindObjectOfType<FirstPersonController_Sam>();
     }
 
     void Update()
     {
         switch (gameState)
-        { 
-            case GameState.MainMenu:    MainMenu(); break;
-            case GameState.Gameplay:    Gameplay(); break;
-            case GameState.Paused:      Paused();   break;
-            case GameState.GameEnd:     GameEnd();  break;
-        }        
+        {
+            case GameState.MainMenu: MainMenu(); break;
+            case GameState.Gameplay: Gameplay(); break;
+            case GameState.Paused: Paused(); break;
+            case GameState.GameEnd: GameEnd(); break;
+        }
     }
 
     # region Gamestate Logic
@@ -59,18 +59,23 @@ public class GameManager : MonoBehaviour
         Time.timeScale = 1f;
         _uIManager.UIMainMenu();
         Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
+        _fpsControllerScript.enabled = false;
+
     }
 
     private void Gameplay()
     {
         Time.timeScale = 1f;
         _uIManager.UIGameplay();
+        _fpsControllerScript.enabled = true;
 
         Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Locked;
 
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            gameState = GameState.Paused;            
+            gameState = GameState.Paused;
         }
     }
 
@@ -79,9 +84,10 @@ public class GameManager : MonoBehaviour
         Time.timeScale = 0f;
         _fpsControllerScript.enabled = false;
 
-        _uIManager.UIPaused();        
+        _uIManager.UIPaused();
 
-        Cursor.visible = true;        
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
 
         if (Input.GetKeyDown(KeyCode.Escape))
         {
@@ -92,8 +98,10 @@ public class GameManager : MonoBehaviour
     private void GameEnd()
     {
         _uIManager.UIGameEnd();
+        _fpsControllerScript.enabled = false;
         Time.timeScale = 1f;
         Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
         // Buttons on screen to quit game or return to main menu
     }
 
@@ -104,15 +112,15 @@ public class GameManager : MonoBehaviour
         _fpsControllerScript.enabled = true;
 
         gameState = GameState.Gameplay;
-        
+
         Cursor.visible = false;
     }
-    
+
     public void QuitGame()
     {
         Application.Quit();
     }
-    
+
     public void MovePlayerToSpawnPosition()
     {
         spawnPoint = GameObject.FindWithTag("SpawnPoint");
@@ -120,13 +128,6 @@ public class GameManager : MonoBehaviour
         _characterController.enabled = false;
         player.transform.position = spawnPoint.transform.position;
         player.transform.rotation = spawnPoint.transform.rotation;
-        _characterController.enabled = true;        
+        _characterController.enabled = true;
     }
-
-   
-
-
 }
-
-
-

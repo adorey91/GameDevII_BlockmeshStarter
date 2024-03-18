@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.30692244, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -566,10 +566,20 @@ PrefabInstance:
       propertyPath: m_Name
       value: CanvasGameplay
       objectReference: {fileID: 0}
+    - target: {fileID: 6013103040186363140, guid: 8b1175995bed761449675f5b8aedaea1,
+        type: 3}
+      propertyPath: m_text
+      value: 'Design by: Adrian Dorey'
+      objectReference: {fileID: 0}
     - target: {fileID: 8288852086485971018, guid: 8b1175995bed761449675f5b8aedaea1,
         type: 3}
       propertyPath: m_text
       value: 2 of 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8723723340184979209, guid: 8b1175995bed761449675f5b8aedaea1,
+        type: 3}
+      propertyPath: m_text
+      value: Mystic Grove
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
