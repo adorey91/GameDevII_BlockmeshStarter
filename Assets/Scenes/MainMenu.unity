@@ -97,8 +97,10 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
-  m_LightingDataAsset: {fileID: 0}
-  m_LightingSettings: {fileID: 0}
+  m_LightingDataAsset: {fileID: 112000000, guid: 5880211a17333aa4ead9dd334312e0dd,
+    type: 2}
+  m_LightingSettings: {fileID: 4890085278179872738, guid: 5171d9668750aa04e9faac772bd1f73d,
+    type: 2}
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -543,6 +545,21 @@ PrefabInstance:
       propertyPath: _fpsControllerScript
       value: 
       objectReference: {fileID: 1115764432}
+    - target: {fileID: 3062724186553635753, guid: 32d592d6c97ad6d46b305107e62d4aee,
+        type: 3}
+      propertyPath: jumpKey
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3062724186553635753, guid: 32d592d6c97ad6d46b305107e62d4aee,
+        type: 3}
+      propertyPath: runSpeed
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3062724186553635753, guid: 32d592d6c97ad6d46b305107e62d4aee,
+        type: 3}
+      propertyPath: crouchKey
+      value: 99
+      objectReference: {fileID: 0}
     - target: {fileID: 4174535894395305454, guid: 32d592d6c97ad6d46b305107e62d4aee,
         type: 3}
       propertyPath: m_LocalPosition.x
