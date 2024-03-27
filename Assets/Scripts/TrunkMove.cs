@@ -6,6 +6,7 @@ public class TrunkMove : MonoBehaviour
 {
     [SerializeField] GameObject treeTrunk;
     [SerializeField] GameObject movedTrunk;
+    [SerializeField] GameObject carrot;
 
     private void Start()
     {
@@ -18,6 +19,7 @@ public class TrunkMove : MonoBehaviour
         {
             treeTrunk.SetActive(false);
             movedTrunk.SetActive(true);
+            carrot.SetActive(false);
             this.gameObject.SetActive(false);
         }
     }
