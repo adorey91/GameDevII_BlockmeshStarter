@@ -512,10 +512,30 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 963530441730188562, guid: 32d592d6c97ad6d46b305107e62d4aee,
+        type: 3}
+      propertyPath: m_text
+      value: ~ You Made It To Freedom ~
+      objectReference: {fileID: 0}
+    - target: {fileID: 1605238926191914674, guid: 32d592d6c97ad6d46b305107e62d4aee,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3062724186553635753, guid: 32d592d6c97ad6d46b305107e62d4aee,
         type: 3}
       propertyPath: crouchSpeed
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3358452819960039970, guid: 32d592d6c97ad6d46b305107e62d4aee,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3805208510189070522, guid: 32d592d6c97ad6d46b305107e62d4aee,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4174535894395305454, guid: 32d592d6c97ad6d46b305107e62d4aee,
         type: 3}
@@ -566,6 +586,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5031509607573343241, guid: 32d592d6c97ad6d46b305107e62d4aee,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 60
       objectReference: {fileID: 0}
     - target: {fileID: 6578302502789273310, guid: 32d592d6c97ad6d46b305107e62d4aee,
         type: 3}
